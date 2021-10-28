@@ -5,17 +5,10 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainScreenFragment">
     <fragment
-        android:id="@+id/multiplayerFragment2"
-        android:name="com.kennelteam.factoria_client.MultiplayerFragment"
-        android:label="MultiplayerFragment" />
-    <fragment
         android:id="@+id/mainScreenFragment"
         android:name="com.kennelteam.factoria_client.MainScreenFragment"
         android:label="MainScreenFragment"
         tools:layout="@layout/main_screen_fragment">
-        <action
-            android:id="@+id/action_mainScreenFragment_to_multiplayerFragment2"
-            app:destination="@id/multiplayerFragment2" />
         <action
             android:id="@+id/action_mainScreenFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -28,22 +21,54 @@
         <action
             android:id="@+id/action_mainScreenFragment_to_singlePlayer"
             app:destination="@id/singlePlayer" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_createGameFragment"
+            app:destination="@id/createGameFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_joinGameFragment"
+            app:destination="@id/joinGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.kennelteam.factoria_client.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="SettingsFragment"
+        tools:layout="@layout/settings_fragment"/>
     <fragment
         android:id="@+id/statisticksFragment"
         android:name="com.kennelteam.factoria_client.StatisticsFragment"
-        android:label="StatisticksFragment" />
+        android:label="StatisticksFragment"
+        tools:layout="@layout/statistics_fragment"/>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.kennelteam.factoria_client.AboutFragment"
-        android:label="AboutFragment" />
+        android:label="AboutFragment"
+        tools:layout="@layout/about_fragment"/>
     <fragment
         android:id="@+id/singlePlayer"
         android:name="com.kennelteam.factoria_client.SinglePlayerFragment"
         android:label="fragment_single_player"
         tools:layout="@layout/fragment_single_player" />
+    <fragment
+        android:id="@+id/createGameFragment"
+        android:name="com.kennelteam.factoria_client.CreateGameFragment"
+        android:label="CreateGameFragment"
+        tools:layout="@layout/create_game_fragment">
+        <action
+            android:id="@+id/action_createGameFragment_to_multiPlayerFragment"
+            app:destination="@id/multiPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinGameFragment"
+        android:name="com.kennelteam.factoria_client.JoinGameFragment"
+        android:label="JoinGameFragment"
+        tools:layout="@layout/join_game_fragment">
+        <action
+            android:id="@+id/action_joinGameFragment_to_multiPlayerFragment"
+            app:destination="@id/multiPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiPlayerFragment"
+        android:name="com.kennelteam.factoria_client.MultiPlayerFragment"
+        android:label="MultiPlayerFragment"
+        tools:layout="@layout/multiplayer_fragment"/>
 </navigation>

@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.kennelteam.factoria_client.databinding.StatisticsFragmentBinding
 
 class StatisticsFragment : Fragment() {
@@ -22,6 +23,10 @@ class StatisticsFragment : Fragment() {
             container,
             false
         )
+
+        binding.backButton.setOnClickListener {
+            this.findNavController().navigateUp()
+        }
 
         return binding.root
     }

@@ -29,6 +29,10 @@ class JoinGameFragment : Fragment() {
             this.findNavController().navigate(R.id.action_joinGameFragment_to_multiPlayerFragment)
         }
 
+        binding.backButton.setOnClickListener {
+            this.findNavController().navigateUp()
+        }
+
         return binding.root
     }
 

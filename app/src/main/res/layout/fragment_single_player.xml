@@ -54,7 +54,7 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/answer_btn_background"
+            android:background="@drawable/btn_border"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="61"
@@ -72,7 +72,7 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/answer_btn_background"
+            android:background="@drawable/btn_border"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="23"
@@ -90,7 +90,7 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginBottom="64dp"
-            android:background="@drawable/answer_btn_background"
+            android:background="@drawable/btn_border"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="5"
@@ -115,7 +115,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/close_icon"
-            app:tint="@color/text" />
+            android:tint="@color/text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

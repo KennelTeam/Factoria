@@ -1,19 +1,17 @@
 package com.kennelteam.factoria_client.single_player
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import com.kennelteam.factoria_client.R
 import com.kennelteam.factoria_client.game.Game
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -21,21 +19,17 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SinglePlayer : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var game: Game
     private lateinit var numberView : TextView
     private lateinit var answer1 : Button
     private lateinit var answer2 : Button
     private lateinit var answer3 : Button
     private lateinit var scoreView : TextView
+    private lateinit var progressBar : ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -49,6 +43,10 @@ class SinglePlayer : Fragment() {
 
     fun update_score() {
         scoreView.text = "Score: " + game.get_score().toString()
+    }
+
+    fun update_progress() {
+        progressBar.progress = game.get_progress()
     }
 
     fun update_number() {
@@ -65,6 +63,7 @@ class SinglePlayer : Fragment() {
     fun update_game() {
         update_score()
         update_number()
+        update_progress()
         update_question()
     }
 
@@ -73,6 +72,7 @@ class SinglePlayer : Fragment() {
         if (game.end_game()) {
             numberView.text = "You won!"
             scoreView.text = "Score: " + game.get_score().toString()
+            update_progress()
         } else {
             update_game()
         }
@@ -87,7 +87,9 @@ class SinglePlayer : Fragment() {
         answer2 = view.findViewById<Button>(R.id.button2)
         answer3 = view.findViewById<Button>(R.id.button3)
         scoreView = view.findViewById<TextView>(R.id.scoreView)
+        progressBar = view.findViewById(R.id.gameProgress)
 
+        progressBar.max = game.get_hardness()
         update_game()
 
         answer1.setOnClickListener {
@@ -116,8 +118,6 @@ class SinglePlayer : Fragment() {
         fun newInstance(param1: String, param2: String) =
             SinglePlayer().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }

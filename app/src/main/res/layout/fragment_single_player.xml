@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/progressBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".single_player.SinglePlayer">
@@ -9,6 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/gameProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="412dp"
+            android:layout_height="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/numberView"

@@ -9,6 +9,7 @@ class Game {
     private var num : Int = 1
     private var simple_divs = mutableSetOf<Int>()
     private var score : Int = 0
+    private var progress = 0
     init {
         var cur_div : Int
         for (i in 1..hardness) {
@@ -21,6 +22,10 @@ class Game {
     fun get_num() : Int = this.num
 
     fun get_score() : Int = this.score
+
+    fun get_progress() : Int = this.progress
+
+    fun get_hardness() : Int = this.hardness
 
     fun get_question() : Array<Int> {
         val right_answer = this.simple_divs.elementAt(Random.nextInt(this.simple_divs.size))
@@ -43,6 +48,7 @@ class Game {
                 this.num /= answer
                 if (this.num % answer != 0) { this.simple_divs.remove(answer) }
                 score++
+                progress++
                 true
             }
             else -> {

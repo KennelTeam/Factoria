@@ -3,16 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/about_fragment.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/main_screen_fragment.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/multiplayer_fragment.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/settings_fragment.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/singleplayer_fragment.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/statisticks_fragment.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_single_player.xml" value="0.33" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -11,13 +11,11 @@
     <fragment
         android:id="@+id/mainScreenFragment"
         android:name="com.kennelteam.factoria_client.MainScreenFragment"
-        android:label="MainScreenFragment" >
+        android:label="MainScreenFragment"
+        tools:layout="@layout/main_screen_fragment">
         <action
             android:id="@+id/action_mainScreenFragment_to_multiplayerFragment2"
             app:destination="@id/multiplayerFragment2" />
-        <action
-            android:id="@+id/action_mainScreenFragment_to_singleplayerFragment"
-            app:destination="@id/singleplayerFragment" />
         <action
             android:id="@+id/action_mainScreenFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
@@ -27,11 +25,10 @@
         <action
             android:id="@+id/action_mainScreenFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_singlePlayer"
+            app:destination="@id/singlePlayer" />
     </fragment>
-    <fragment
-        android:id="@+id/singleplayerFragment"
-        android:name="com.kennelteam.factoria_client.SingleplayerFragment"
-        android:label="SingleplayerFragment" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.kennelteam.factoria_client.SettingsFragment"
@@ -44,4 +41,9 @@
         android:id="@+id/aboutFragment"
         android:name="com.kennelteam.factoria_client.AboutFragment"
         android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/singlePlayer"
+        android:name="com.kennelteam.factoria_client.SinglePlayerFragment"
+        android:label="fragment_single_player"
+        tools:layout="@layout/fragment_single_player" />
 </navigation>

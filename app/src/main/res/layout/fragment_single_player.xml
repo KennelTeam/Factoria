@@ -9,61 +9,110 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
         <ProgressBar
             android:id="@+id/gameProgress"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="412dp"
-            android:layout_height="23dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:max="100"
+            android:progress="80"
+            android:progressDrawable="@drawable/progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scoreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Score: 45"
+            android:textColor="@color/text"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gameProgress"
+            app:layout_constraintStart_toStartOf="@+id/gameProgress"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/numberView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:text="@string/number"
+            android:layout_marginTop="140dp"
+            android:text="1791791791"
+            android:textColor="@color/text"
+            android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/gameProgress" />
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="@string/divisor1"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/background"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:text="61"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberView" />
+            app:layout_constraintTop_toBottomOf="@+id/numberView"
+            app:strokeColor="@color/text"
+            app:strokeWidth="2sp" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/divisor2"
+            android:backgroundTint="@color/background"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:text="23"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1" />
+            app:layout_constraintTop_toBottomOf="@+id/button1"
+            app:strokeColor="@color/text"
+            app:strokeWidth="2sp" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/divisor3"
+            android:backgroundTint="@color/background"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:text="5"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:strokeColor="@color/text"
+            app:strokeWidth="2sp" />
 
-        <TextView
-            android:id="@+id/scoreView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/score"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/background"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:tint="@color/text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/close_icon" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

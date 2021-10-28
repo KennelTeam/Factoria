@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Factoriaclient" >
         <activity
-            android:name=".MultiPlayerActivity"
-            android:exported="true"
-            android:label="@string/title_activity_multi_player"
-            android:theme="@style/Theme.Factoriaclient.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>

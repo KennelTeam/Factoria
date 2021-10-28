@@ -1,5 +1,8 @@
 package com.kennelteam.factoria_client
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +10,8 @@ import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+
 import androidx.navigation.fragment.findNavController
 import com.kennelteam.factoria_client.databinding.MainScreenFragmentBinding
 
@@ -24,11 +29,20 @@ class MainScreenFragment : Fragment() {
             container,
             false
         )
-        Log.i("123", "ono zhe rabotalo")
 
         binding.multiplayerButton.setOnClickListener {
-            Log.i("123", "multi")
-            this.findNavController().navigate(R.id.action_mainScreenFragment_to_multiplayerFragment2)
+            val dialogBuilder = AlertDialog.Builder(context)
+            dialogBuilder.setTitle("Game mode")
+
+            dialogBuilder.setPositiveButton("Create game", DialogInterface.OnClickListener { _, _ ->
+                this.findNavController().navigate(R.id.action_mainScreenFragment_to_createGameFragment)
+            })
+
+            dialogBuilder.setNegativeButton("Join game", DialogInterface.OnClickListener { _, _ ->
+                this.findNavController().navigate(R.id.action_mainScreenFragment_to_joinGameFragment)
+            })
+
+            dialogBuilder.show()
         }
 
         binding.singleplayerButton.setOnClickListener {

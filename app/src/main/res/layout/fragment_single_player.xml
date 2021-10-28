@@ -40,7 +40,7 @@
             android:id="@+id/numberView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="64dp"
             android:text="1791791791"
             android:textColor="@color/text"
             android:textSize="48sp"
@@ -52,51 +52,54 @@
         <Button
             android:id="@+id/button1"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/background"
+            android:layout_height="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/answer_btn_background"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="61"
+            android:textColor="@color/text"
             android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberView"
             app:strokeColor="@color/text"
             app:strokeWidth="2sp" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/background"
+            android:layout_height="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/answer_btn_background"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="23"
+            android:textColor="@color/text"
             android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1"
             app:strokeColor="@color/text"
             app:strokeWidth="2sp" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/background"
+            android:layout_height="60dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/answer_btn_background"
             android:paddingLeft="36dp"
             android:paddingRight="36dp"
             android:text="5"
+            android:textColor="@color/text"
             android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
             app:strokeColor="@color/text"
             app:strokeWidth="2sp" />
 
@@ -109,10 +112,10 @@
             android:background="@color/background"
             android:scaleX="2"
             android:scaleY="2"
-            android:tint="@color/text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/close_icon" />
+            app:srcCompat="@drawable/close_icon"
+            app:tint="@color/text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

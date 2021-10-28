@@ -24,7 +24,7 @@
     <Button
         android:id="@+id/button6"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="140dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/multiplayer_btn"
         android:backgroundTintMode="add"
@@ -36,7 +36,7 @@
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
-        android:layout_height="160dp"
+        android:layout_height="140dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/singleplayer_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +46,9 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/settings_icon"
         android:backgroundTint="@color/tool_btns"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,9 +57,10 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/settings_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/about_icon"
         android:backgroundTint="@color/tool_btns"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,8 +68,8 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/stats_icon"
         android:backgroundTint="@color/tool_btns"
         app:layout_constraintBottom_toBottomOf="parent"

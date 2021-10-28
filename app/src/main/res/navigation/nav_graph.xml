@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainScreenFragment">
+    <fragment
+        android:id="@+id/multiplayerFragment2"
+        android:name="com.kennelteam.factoria_client.MultiplayerFragment"
+        android:label="MultiplayerFragment" />
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.kennelteam.factoria_client.MainScreenFragment"
+        android:label="MainScreenFragment" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_multiplayerFragment2"
+            app:destination="@id/multiplayerFragment2" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_singleplayerFragment"
+            app:destination="@id/singleplayerFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_statisticksFragment"
+            app:destination="@id/statisticksFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleplayerFragment"
+        android:name="com.kennelteam.factoria_client.SingleplayerFragment"
+        android:label="SingleplayerFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kennelteam.factoria_client.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/statisticksFragment"
+        android:name="com.kennelteam.factoria_client.StatisticsFragment"
+        android:label="StatisticksFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.kennelteam.factoria_client.AboutFragment"
+        android:label="AboutFragment" />
+</navigation>

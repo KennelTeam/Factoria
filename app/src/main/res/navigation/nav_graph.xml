@@ -65,10 +65,36 @@
         android:id="@+id/multiPlayerFragment"
         android:name="com.kennelteam.factoria_client.MultiPlayerFragment"
         android:label="MultiPlayerFragment"
-        tools:layout="@layout/multiplayer_fragment"/>
+        tools:layout="@layout/multiplayer_fragment">
+        <action
+            android:id="@+id/action_multiPlayerFragment_to_multiPlayerFinishedFragment"
+            app:destination="@id/multiPlayerFinishedFragment" />
+    </fragment>
     <fragment
         android:id="@+id/singlePlayerFragment"
         android:name="com.kennelteam.factoria_client.SinglePlayerFragment"
         android:label="SinglePlayerFragment"
-        tools:layout="@layout/single_player_fragment"/>
+        tools:layout="@layout/single_player_fragment">
+        <action
+            android:id="@+id/action_singlePlayerFragment_to_singlePlayerFinishedFragment"
+            app:destination="@id/singlePlayerFinishedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singlePlayerFinishedFragment"
+        android:name="com.kennelteam.factoria_client.SinglePlayerFinishedFragment"
+        android:label="SinglePlayerFinishedFragment"
+        tools:layout="@layout/single_player_finished_fragment">
+        <action
+            android:id="@+id/action_singlePlayerFinishedFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiPlayerFinishedFragment"
+        android:name="com.kennelteam.factoria_client.MultiPlayerFinishedFragment"
+        android:label="MultiPlayerFinishedFragment"
+        tools:layout="@layout/multi_player_finished_fragment">
+        <action
+            android:id="@+id/action_multiPlayerFinishedFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
 </navigation>

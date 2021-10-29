@@ -1,7 +1,6 @@
 package com.kennelteam.factoria_client
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +9,23 @@ import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import androidx.navigation.fragment.findNavController
 import com.kennelteam.factoria_client.databinding.MainScreenFragmentBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.DataInputStream
+import java.io.DataOutputStream
+import java.lang.Thread.sleep
+import java.net.InetAddress
+import java.net.Socket
+import java.nio.charset.StandardCharsets
 
 class MainScreenFragment : Fragment() {
 
     private lateinit var binding: MainScreenFragmentBinding
+    private lateinit var din: DataInputStream
+    private lateinit var dout: DataOutputStream
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,5 +71,20 @@ class MainScreenFragment : Fragment() {
 
         return binding.root
     }
+
+//    private fun toServer() {
+////        setupConn()
+//        Communicator.sendMessage(
+//            """
+//                {
+//                    "message_type": "create_room",
+//                    "nickname": "nebolax"
+//                }
+//            """.trimIndent()
+//        )
+//
+//        val mess = Communicator.readms()
+//        Log.i("1234", mess)
+//    }
 
 }

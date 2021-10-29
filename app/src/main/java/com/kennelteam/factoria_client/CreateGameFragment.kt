@@ -30,17 +30,24 @@ class CreateGameFragment : Fragment() {
         )
 
         if (!Params.isJoining) {
-            Communicator.sendMessage("""{"message_type": "create_room", "nickname": "player1"}""")
+            Communicator.sendMessage("""{"message_type": "create_room", "nickname": "Host"}""")
         }
+
+        if (Params.enemyName != "") {
+            binding.EnemyNameText.text = Params.enemyName
+        }
+
         Communicator.data.observe(viewLifecycleOwner, Observer {
             if (it["message_type"] == "room_created") {
                 binding.roomIdText.text = "ID: " + it["room_id"]
             } else if (it["message_type"] == "connected_player") {
                 enemyName = it["nickname"]!!
+                binding.EnemyNameText.text = enemyName
                 Log.i("1234", "Welcome, $enemyName")
             } else if (it["message_type"] == "disconnected_player") {
                 Log.i("1234", "Goodbye, $enemyName")
                 enemyName = ""
+                binding.EnemyNameText.text = "waiting..."
             }
         })
 

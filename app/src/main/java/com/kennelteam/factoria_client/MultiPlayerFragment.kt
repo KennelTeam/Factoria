@@ -1,7 +1,9 @@
 package com.kennelteam.factoria_client
 
+import android.R.attr
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -13,6 +15,10 @@ import androidx.navigation.fragment.findNavController
 import com.kennelteam.factoria_client.databinding.MultiplayerFragmentBinding
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import android.R.attr.delay
+
+
+
 
 class MultiPlayerFragment : Fragment() {
 
@@ -24,6 +30,9 @@ class MultiPlayerFragment : Fragment() {
     private var answersEnemy: Int = 0
     private var variants = listOf<Int>()
     private lateinit var myName : String
+    private final var handler: Handler = Handler()
+    private var myScore = 0
+    private var enemyScore = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -43,6 +52,23 @@ class MultiPlayerFragment : Fragment() {
         binding.gameProgress.progress = 0
         binding.gameProgress2.progress = 0
 
+        handler.postDelayed(object : Runnable  {
+            override fun run() {
+                binding.scoreView.text = "You: " + myScore.toString()
+                if (dividersCount != answersMe) {
+                    myScore -= 1
+                }
+
+
+                binding.scoreView2.text = enemyName + ": " + enemyScore.toString()
+                if (dividersCount != answersEnemy) {
+                    enemyScore -= 1
+                }
+
+                handler.postDelayed(this, 1000)
+            }
+        }, 1000)
+
         enemyName = Params.enemyName
         binding.scoreView2.text = "$enemyName: 0"
         Communicator.data.observe(viewLifecycleOwner, {
@@ -59,9 +85,12 @@ class MultiPlayerFragment : Fragment() {
                 val name = it["answered_player"]
                 if (name == enemyName) {
                     answersEnemy++
+                    enemyScore += 20
                 } else {
                     myName = name!!
+                    Params.myName = name!!
                     answersMe++
+                    myScore += 20
                     Communicator.sendMessage("""{"message_type": "get_question"}""")
                 }
                 updateProgress()
@@ -69,14 +98,29 @@ class MultiPlayerFragment : Fragment() {
                 val name = it["mistaken_player"]
                 if (name == enemyName) {
                     mistakesEnemy++
+                    enemyScore -= 40
                 } else {
                     mistakesMe++
+                    myScore -= 40
                 }
-            } else if (it["message_type"] == "finish") {
-                Params.resultsEnemy = it[enemyName]!!
-                Params.resultsMe = it[myName]!!
+            } else if (it["message_type"] == "finished") {
+                Log.i("12345", "finished!!")
+                Log.i("12345", it["results"]!!)
 
-                //TODO: implement finish multiplayer
+                val strings = it["results"]!!.split("\"")
+                val str1 = strings[1]
+                val str2 = strings[3]
+
+                if (strings[0].contains(myName)) {
+                    Params.resultsMe = str1
+                    Params.resultsEnemy = str2
+                } else {
+                    Params.resultsEnemy = str1
+                    Params.resultsMe = str2
+                }
+
+                Log.i("12345", "test")
+                this.findNavController().navigate(R.id.action_multiPlayerFragment_to_multiPlayerFinishedFragment)
             }
         })
 

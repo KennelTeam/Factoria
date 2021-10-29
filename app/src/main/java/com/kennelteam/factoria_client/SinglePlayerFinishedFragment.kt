@@ -24,7 +24,7 @@ class SinglePlayerFinishedFragment : Fragment() {
             false
         )
 
-        binding.okButton.setOnClickListener {
+        binding.okButtonS.setOnClickListener {
             this.findNavController().navigate(R.id.action_singlePlayerFinishedFragment_to_mainScreenFragment)
         }
 

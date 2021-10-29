@@ -40,11 +40,13 @@ class JoinGameFragment : Fragment() {
                     Params.enemyName = it["nickname"]!!
                 }
             })
+            Log.i("12345q", binding.idField.text.toString())
+            Log.i("12345q", binding.nicknameField.text.toString())
             Communicator.sendMessage("""
                 {
                     "message_type": "connect_to_room",
-                    "room_id": 1,
-                    "nickname": "impostor"
+                    "room_id": ${binding.idField.text.toString()},
+                    "nickname": "${binding.nicknameField.text.toString()}"
                 }
             """.trimIndent())
         }

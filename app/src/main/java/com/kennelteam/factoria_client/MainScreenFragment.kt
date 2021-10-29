@@ -24,8 +24,6 @@ import java.nio.charset.StandardCharsets
 class MainScreenFragment : Fragment() {
 
     private lateinit var binding: MainScreenFragmentBinding
-    private lateinit var din: DataInputStream
-    private lateinit var dout: DataOutputStream
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,23 +37,11 @@ class MainScreenFragment : Fragment() {
         )
 
         binding.multiplayerButton.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(context)
-            dialogBuilder.setTitle("Game mode")
-
-            dialogBuilder.setPositiveButton("Create game", DialogInterface.OnClickListener { _, _ ->
-                Params.isJoining = false
-                this.findNavController().navigate(R.id.action_mainScreenFragment_to_createGameFragment)
-            })
-
-            dialogBuilder.setNegativeButton("Join game", DialogInterface.OnClickListener { _, _ ->
-                this.findNavController().navigate(R.id.action_mainScreenFragment_to_joinGameFragment)
-            })
-
-            dialogBuilder.show()
+            fragmentManager?.let { it1 -> CustomDialogFragment().show(it1, "CustomDialog") }
         }
 
         binding.singleplayerButton.setOnClickListener {
-            this.findNavController().navigate(R.id.action_mainScreenFragment_to_singlePlayer)
+            this.findNavController().navigate(R.id.action_mainScreenFragment_to_singlePlayerFragment)
         }
 
         binding.settingsButton.setOnClickListener {

@@ -1,8 +1,9 @@
 package com.kennelteam.factoria_client
 
 object Params {
-    lateinit var dividersCount: Any
-    lateinit var enemyName: String
+    var dividersCount: Int = 0
+    var enemyName: String = ""
+    var myName: String = ""
     var isJoining = false
     lateinit var resultsMe: String
     lateinit var resultsEnemy: String

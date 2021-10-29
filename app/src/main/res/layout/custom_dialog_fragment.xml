@@ -8,22 +8,21 @@
 
         <TextView
             android:id="@+id/tv_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="36dp"
             android:text="Game mode"
             android:textColor="@color/text"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/create_game_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/create_game_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             android:background="@drawable/btn_border"
             android:text="Create game"
             android:textColor="@color/text"
@@ -35,8 +34,8 @@
 
         <Button
             android:id="@+id/join_game_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             android:background="@drawable/btn_border"
             android:text="Join game"
             android:textColor="@color/text"

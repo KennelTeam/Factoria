@@ -54,7 +54,7 @@ class MainScreenFragment : Fragment() {
         }
 
         binding.singleplayerButton.setOnClickListener {
-            this.findNavController().navigate(R.id.action_mainScreenFragment_to_singlePlayer)
+            this.findNavController().navigate(R.id.action_mainScreenFragment_to_singlePlayerFragment)
         }
 
         binding.settingsButton.setOnClickListener {

@@ -71,4 +71,16 @@
         android:name="com.kennelteam.factoria_client.SinglePlayerFragment"
         android:label="SinglePlayerFragment"
         tools:layout="@layout/single_player_fragment"/>
+    <fragment
+        android:id="@+id/customDialogFragment"
+        android:name="com.kennelteam.factoria_client.CustomDialogFragment"
+        android:label="CustomDialogFragment"
+        tools:layout="@layout/custom_dialog_fragment">
+        <action
+            android:id="@+id/action_customDialogFragment_to_createGameFragment"
+            app:destination="@id/createGameFragment" />
+        <action
+            android:id="@+id/action_customDialogFragment_to_joinGameFragment"
+            app:destination="@id/joinGameFragment" />
+    </fragment>
 </navigation>

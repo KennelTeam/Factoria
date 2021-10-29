@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 
 import androidx.navigation.fragment.findNavController
 import com.kennelteam.factoria_client.databinding.MainScreenFragmentBinding
@@ -24,8 +25,6 @@ import java.nio.charset.StandardCharsets
 class MainScreenFragment : Fragment() {
 
     private lateinit var binding: MainScreenFragmentBinding
-    private lateinit var din: DataInputStream
-    private lateinit var dout: DataOutputStream
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,18 +38,7 @@ class MainScreenFragment : Fragment() {
         )
 
         binding.multiplayerButton.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(context)
-            dialogBuilder.setTitle("Game mode")
-
-            dialogBuilder.setPositiveButton("Create game", DialogInterface.OnClickListener { _, _ ->
-                this.findNavController().navigate(R.id.action_mainScreenFragment_to_createGameFragment)
-            })
-
-            dialogBuilder.setNegativeButton("Join game", DialogInterface.OnClickListener { _, _ ->
-                this.findNavController().navigate(R.id.action_mainScreenFragment_to_joinGameFragment)
-            })
-
-            dialogBuilder.show()
+            fragmentManager?.let { it1 -> CustomDialogFragment().show(it1, "CustomDialog") }
         }
 
         binding.singleplayerButton.setOnClickListener {
@@ -71,20 +59,5 @@ class MainScreenFragment : Fragment() {
 
         return binding.root
     }
-
-//    private fun toServer() {
-////        setupConn()
-//        Communicator.sendMessage(
-//            """
-//                {
-//                    "message_type": "create_room",
-//                    "nickname": "nebolax"
-//                }
-//            """.trimIndent()
-//        )
-//
-//        val mess = Communicator.readms()
-//        Log.i("1234", mess)
-//    }
 
 }

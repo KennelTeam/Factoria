@@ -43,6 +43,7 @@ class MainScreenFragment : Fragment() {
             dialogBuilder.setTitle("Game mode")
 
             dialogBuilder.setPositiveButton("Create game", DialogInterface.OnClickListener { _, _ ->
+                Params.isJoining = false
                 this.findNavController().navigate(R.id.action_mainScreenFragment_to_createGameFragment)
             })
 
@@ -71,20 +72,4 @@ class MainScreenFragment : Fragment() {
 
         return binding.root
     }
-
-//    private fun toServer() {
-////        setupConn()
-//        Communicator.sendMessage(
-//            """
-//                {
-//                    "message_type": "create_room",
-//                    "nickname": "nebolax"
-//                }
-//            """.trimIndent()
-//        )
-//
-//        val mess = Communicator.readms()
-//        Log.i("1234", mess)
-//    }
-
 }

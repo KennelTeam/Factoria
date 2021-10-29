@@ -63,8 +63,8 @@
         android:label="JoinGameFragment"
         tools:layout="@layout/join_game_fragment">
         <action
-            android:id="@+id/action_joinGameFragment_to_multiPlayerFragment"
-            app:destination="@id/multiPlayerFragment" />
+            android:id="@+id/action_joinGameFragment_to_createGameFragment"
+            app:destination="@id/createGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/multiPlayerFragment"

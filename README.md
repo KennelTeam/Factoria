@@ -39,6 +39,8 @@ Other parts of app receive information from communication module by observing Mu
 We have spent a lot of time to establish communication with server and are not very confident about correctness of our solution.
 If you have any ideas, we will be glad to hear!
 
+[Design in Figma](https://www.figma.com/file/7557tfi9qksGnfvjKwz4FS/Factoria)
+
 ## Problems
 
 - App doesn't start if phone isn't connected to internet

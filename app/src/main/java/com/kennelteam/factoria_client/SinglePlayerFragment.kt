@@ -78,9 +78,16 @@ class SinglePlayerFragment : Fragment() {
     fun check_answer_and_update(answer: Int) {
         game.check_answer(answer)
         if (game.end_game()) {
-            binding.numberView.text = "You won!"
-            binding.scoreView.text = "Score: " + game.get_score().toString()
+            update_score()
             update_progress()
+            binding.numberView.text = "You won!"
+            binding.finalScore.text = "Score: " + game.get_score().toString()
+            binding.finalScore.visibility = View.VISIBLE
+            binding.gameProgress.visibility = View.INVISIBLE
+            binding.scoreView.visibility = View.INVISIBLE
+            binding.button1.visibility = View.INVISIBLE
+            binding.button2.visibility = View.INVISIBLE
+            binding.button3.visibility = View.INVISIBLE
         } else {
             update_game()
         }

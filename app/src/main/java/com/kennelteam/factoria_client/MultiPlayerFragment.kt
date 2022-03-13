@@ -71,7 +71,7 @@ class MultiPlayerFragment : Fragment() {
 
         enemyName = Params.enemyName
         binding.scoreView2.text = "$enemyName: 0"
-        Communicator.data.observe(viewLifecycleOwner, {
+        Communicator.data.observe(viewLifecycleOwner) {
             Log.i("12345", it.toString())
             if (it["message_type"] == "question") {
                 Log.i("12345", "question processing")
@@ -120,12 +120,14 @@ class MultiPlayerFragment : Fragment() {
                 }
 
                 Log.i("12345", "test")
-                this.findNavController().navigate(R.id.action_multiPlayerFragment_to_multiPlayerFinishedFragment)
+                this.findNavController()
+                    .navigate(R.id.action_multiPlayerFragment_to_multiPlayerFinishedFragment)
+            } else if (it["message_type"] == "result") {
+                Log.i("12345", "result!")
+                val action = MultiPlayerFragmentDirections.actionMultiPlayerFragmentToMultiPlayerFinishedFragment()
+                action.message = it["result"]!!
+                findNavController().navigate(action)
             }
-        })
-
-        binding.backButton.setOnClickListener {
-            this.findNavController().navigateUp()
         }
 
         binding.button1.setOnClickListener { submitAnswer(0) }

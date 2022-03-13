@@ -50,7 +50,8 @@
         tools:layout="@layout/create_game_fragment">
         <action
             android:id="@+id/action_createGameFragment_to_multiPlayerFragment"
-            app:destination="@id/multiPlayerFragment" />
+            app:destination="@id/multiPlayerFragment"
+            app:popUpTo="@id/multiPlayerFragment" />
     </fragment>
     <fragment
         android:id="@+id/joinGameFragment"
@@ -58,8 +59,8 @@
         android:label="JoinGameFragment"
         tools:layout="@layout/join_game_fragment">
         <action
-            android:id="@+id/action_joinGameFragment_to_createGameFragment"
-            app:destination="@id/createGameFragment" />
+            android:id="@+id/action_joinGameFragment_to_guestWaitingFragment"
+            app:destination="@id/guestWaitingFragment" />
     </fragment>
     <fragment
         android:id="@+id/multiPlayerFragment"
@@ -96,5 +97,22 @@
         <action
             android:id="@+id/action_multiPlayerFinishedFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue='"no msg passed"' />
+    </fragment>
+    <fragment
+        android:id="@+id/guestWaitingFragment"
+        android:name="com.kennelteam.factoria_client.GuestWaitingFragment"
+        android:label="GuestWaitingFragment"
+        tools:layout="@layout/guest_waiting_fragment">
+        <action
+            android:id="@+id/action_guestWaitingFragment_to_multiPlayerFragment"
+            app:destination="@id/multiPlayerFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_guestWaitingFragment_to_multiPlayerFinishedFragment"
+            app:destination="@id/multiPlayerFinishedFragment" />
     </fragment>
 </navigation>

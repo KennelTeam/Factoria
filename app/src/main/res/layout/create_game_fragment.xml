@@ -31,33 +31,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/nickname_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:backgroundTint="@color/tool_btns"
-        android:ems="10"
-        android:hint="Your NickName"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:singleLine="false"
-        android:textColor="@color/text"
-        android:textColorHint="@color/tool_btns"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
     <Button
         android:id="@+id/startButton"
         android:layout_width="120sp"
         android:layout_height="50sp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/btn_border"
+        android:enabled="true"
         android:text="Start"
         android:textColor="@color/text"
         android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -73,45 +57,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_field" />
+        app:layout_constraintTop_toBottomOf="@+id/roomIdText" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/EnemyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="waiting..."
+        android:text="waiting..."
         android:textColor="@color/text"
         android:textColorHint="@color/tool_btns"
         android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="@+id/nickname_field"
-        app:layout_constraintStart_toStartOf="@+id/nickname_field"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/EnemyNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="waiting..."
-        android:textColor="@color/text"
-        android:textColorHint="@color/tool_btns"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="@+id/nickname_field"
-        app:layout_constraintStart_toStartOf="@+id/nickname_field"
+        app:layout_constraintEnd_toEndOf="@+id/roomIdText"
+        app:layout_constraintStart_toStartOf="@+id/roomIdText"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/roomIdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:hint="waiting..."
         android:textColor="@color/text"
         android:textColorHint="@color/tool_btns"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/nickname_field"
-        app:layout_constraintEnd_toEndOf="@+id/nickname_field"
-        app:layout_constraintStart_toStartOf="@+id/nickname_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -48,7 +48,8 @@ class Game {
         val wrong_answer1 = simple_numbers[wrong_answer_idx]
         simple_numbers.shuffle()
         while (this.num % simple_numbers[wrong_answer_idx] == 0 &&
-            simple_numbers[wrong_answer_idx] != wrong_answer1) { wrong_answer_idx++ }
+            simple_numbers[wrong_answer_idx] != wrong_answer1 &&
+                wrong_answer1 == simple_numbers[wrong_answer_idx]) { wrong_answer_idx++ }
         val wrong_answer2 = simple_numbers[wrong_answer_idx]
         val variants = arrayOf(right_answer, wrong_answer1, wrong_answer2)
         variants.shuffle()

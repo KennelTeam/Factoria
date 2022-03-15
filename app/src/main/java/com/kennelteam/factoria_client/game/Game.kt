@@ -1,11 +1,14 @@
 package com.kennelteam.factoria_client.game
 import kotlin.random.Random
 
-val simple_numbers = arrayOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
-    71, 73, 79, 83, 89, 97, 101)
+val simple_primes = arrayOf(2, 3, 5, 7, 11)
+val medium_primes = arrayOf(13, 17, 23, 29, 31)
+val hard_primes = arrayOf(37, 41, 43, 47, 53, 59, 61, 67, 71, 73)
+val simple_numbers = arrayOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+    59, 61, 67, 71, 73)
 
 class Game {
-    private val hardness : Int = 3
+    private val hardness : Int = 4
     private var num : Int = 1
     private var simple_divs = mutableSetOf<Int>()
     private var score : Int = 0
@@ -13,7 +16,17 @@ class Game {
     init {
         var cur_div : Int
         for (i in 1..hardness) {
-            cur_div = simple_numbers[Random.nextInt(simple_numbers.size)]
+            cur_div = simple_primes[Random.nextInt(simple_primes.size)]
+            num *= cur_div
+            simple_divs.add(cur_div)
+        }
+        for (i in 1..(hardness / 2)) {
+            cur_div = medium_primes[Random.nextInt(medium_primes.size)]
+            num *= cur_div
+            simple_divs.add(cur_div)
+        }
+        for (i in 1..(hardness / 3)) {
+            cur_div = hard_primes[Random.nextInt(hard_primes.size)]
             num *= cur_div
             simple_divs.add(cur_div)
         }

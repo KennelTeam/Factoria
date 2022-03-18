@@ -138,7 +138,12 @@ class MultiPlayerFragment : Fragment() {
     }
 
     fun submitAnswer(btnId: Int) {
-        Communicator.sendMessage("""{"message_type": "answer", "answer": ${variants[btnId]}}""")
+        Communicator.sendMessage("""{
+            "message_type": "answer", 
+            "answer": ${variants[btnId]},
+            "points_me": ${this.myScore},
+            "points_enemy": ${this.enemyScore}
+            }""".trimMargin())
     }
 
     fun updateProgress() {

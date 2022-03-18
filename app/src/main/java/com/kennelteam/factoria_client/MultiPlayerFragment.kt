@@ -85,12 +85,12 @@ class MultiPlayerFragment : Fragment() {
                 val name = it["answered_player"]
                 if (name == enemyName) {
                     answersEnemy++
-                    enemyScore += 20
+                    enemyScore += 100
                 } else {
                     myName = name!!
                     Params.myName = name!!
                     answersMe++
-                    myScore += 20
+                    myScore += 100
                     Communicator.sendMessage("""{"message_type": "get_question"}""")
                 }
                 updateProgress()
@@ -98,10 +98,10 @@ class MultiPlayerFragment : Fragment() {
                 val name = it["mistaken_player"]
                 if (name == enemyName) {
                     mistakesEnemy++
-                    enemyScore -= 40
+                    enemyScore -= 100
                 } else {
                     mistakesMe++
-                    myScore -= 40
+                    myScore -= 100
                 }
             } else if (it["message_type"] == "finished") {
                 Log.i("12345", "finished!!")

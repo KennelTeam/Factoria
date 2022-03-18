@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">factoria-client</string>
+    <string name="app_name">Factoria</string>
     <string name="single_player_fragment">HSingle Player fragment</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="number">1791791791</string>
